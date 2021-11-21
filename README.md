@@ -5,7 +5,7 @@
 
 Логи принтовал прямо внутри ноутбука. Ячейки для скачивания весов соответствующих моделей тоже есть (они рядом с запусками тренировок). Нет ссылок только для квантизованных моделей, всё-таки их обучать не нужно.
 
-По идее, воспроизвести модели можно аккуратным протыкиванием всего ноутбука.
+По идее, воспроизвести модели можно аккуратным протыкиванием всего ноутбука (seed я фиксировал).
 
 ## Стриминг
 
@@ -39,13 +39,15 @@
 
 ### Графики
 
+_На графиках KD — Knowledge Distillation, AD — Attention Distillation, DQ — Dynamic Quantization, B — Base._
+
 ![Quantization](https://github.com/erasedwalt/kws-hw/blob/main/pictures/quantization.png)
 
 Тут можно посмотреть, как квантизация влияет на размер модели в зависимости от того, насколько большой у неё изначально размер. Любопытно. Получается, что уже небольшие модели сжимаются не так сильно.
 
-Также можно посмотреть на то, как теряется качество, но здесь что-то сказать сложно, потому что в случае дистилляции модель потеряла очень мало в качестве, а в остальных случаях заметно больше.
+Также можно посмотреть на то, как теряется качество, но здесь что-то сказать сложно, потому что в некоторых случаях модель даже улучшается в качестве.
 
-При этом качество падает в пределах разумного, и в то же время размер уменьшается сильно. Поэтому вывод — квантизация мастхэв.
+При этом качество меняется в пределах разумного, и в то же время размер уменьшается сильно. Поэтому вывод — квантизация мастхэв.
 
 ![Distillation](https://github.com/erasedwalt/kws-hw/blob/main/pictures/distillation.png)
 
@@ -56,3 +58,16 @@
 ![MACs vs Size](https://github.com/erasedwalt/kws-hw/blob/main/pictures/size%20vs%20macs.png)
 
 Тут видимо можно сделать вывод, что размер и MACs модели ведут себя примерно пропорционально, только с большим коэффициентом, что логично.
+
+## Ссылки
+
+Ссылки на модели.
+
+- [B](https://drive.google.com/file/d/12FHzJRLIWxq5bQFa9IDOEuqFfkz1q5Ic/view?usp=sharing)
+- [DQ+B](https://drive.google.com/file/d/1-CnggSb4h6iNamOHsAWdIn8dZCwdBDOW/view?usp=sharing)
+- [KD](https://drive.google.com/file/d/1-02tWOG3fwVjWRU_qthLXCWtUKqUhJtT/view?usp=sharing)
+- [DQ+KD](https://drive.google.com/file/d/1-DdVoVKouoejeREM93MbHjHGast_Sn0a/view?usp=sharing)
+- [KD2](https://drive.google.com/file/d/1-1DHkuwd8_NlNB4SOH7lcz12LANwCQ-K/view?usp=sharing)
+- [DQ+KD2](https://drive.google.com/file/d/1-4wzaS5IuUokdFaRV2mDqws9fXj2C3Ce/view?usp=sharing)
+- [AD+KD](https://drive.google.com/file/d/1xVPynAedL4JYmniC_YSpccWyeJtDKUxG/view?usp=sharing)
+- [DQ+AD+KD (Best)](https://drive.google.com/file/d/1-1Hs45mFNO8pHjI2Ge8m8T_fwmgzMZ23/view?usp=sharing)
